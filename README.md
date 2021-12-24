@@ -1,25 +1,25 @@
-# mechanical-arm
-通过机械手完成不同的物体抓取
+# bionic arm
+bionic arm control
 
 <p align="center">
 <img src="https://github.com/qq44642754a/mechanical-arm/blob/master/serial_test/media/run_service.png" width="400">
 <img src="https://github.com/qq44642754a/mechanical-arm/blob/master/serial_test/media/service_call.png" width="400">
 
 # serial_test
-使用rosservice来控制机械手完成指定动作
+use rosservice  control bionic arm move
 
-# 开发环境：
+# develop environment：
 Ubuntu 16.04 + ros kinetic &&  Ubuntu 18.04 + ros melodic
 
-# 传感器：
+# sensor：
 
-深度摄像头
+intel realsense d435
 
-# 实验平台：
+# hardware equipment：
 
-钛虎智能仿生手
+Ti5hand bionic arm
   
-#安装方法:
+#setup:
 ```
 $mkdir your_ws
      
@@ -35,26 +35,26 @@ $catkin_make
 ```
 
 
-# 运行机械手:
+# run bionic arm:
 
-## 1.将U盘插入工控机或者开发板上:
+## 1.connect serial port to control unit:
 ```
 $cd /dev && ls
 ```
-#### 注： 当看到有ttyUSBx开头的设备时，代表机械手的串口已连接
-## 2.运行moveHand service程序:
+#### ps： when saw ttyUSBx equipment，it means the bionic arm is connected
+## 2.run "moveHand service" program:
 ```
 $rosrun serial_test move_hand_service.py
 ```
 
-## 3.在终端中call /move_hand 服务:
+## 3.call /move_hand service in terminal:
 ```
 $rosservice call /move_hand "type: 1"
 ```
 
-### 本demo的service请求类型
+### service query type of the demo
 
-|request| 含义|
+|request| action|
 |:----:| -------------|
 |1 | Open|
 |2 | Fist|
