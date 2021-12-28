@@ -27,7 +27,7 @@ $cd your_ws/
      
 $mkdir src && cd src/
      
-$git clone https://github.com/qq44642754a/mechanical-arm.git
+$git clone https://github.com/lizjuee/hand-move.git
      
 $cd ..
      
